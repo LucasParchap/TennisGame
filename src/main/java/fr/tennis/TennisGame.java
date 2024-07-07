@@ -20,7 +20,12 @@ public class TennisGame {
             if (player1.getPoints() == player2.getPoints()) {
                 return "deuce";
             }
-            System.out.println(player1.getPoints());
+            if (player1.getPoints() > player2.getPoints()) {
+                return translateScore(player1.getScore()) + " " + player1;
+            }
+            if (player2.getPoints() < player1.getPoints()) {
+                return translateScore(player2.getScore()) + " " + player2;
+            }
         }
         if (player1.getPoints() >= 4 && player1.getPoints() >= player2.getPoints() + 2) {
             return "Win for " + player1;
@@ -41,6 +46,8 @@ public class TennisGame {
                 return "30";
             case FORTY:
                 return "40";
+            case ADVANTAGE:
+                return "Advantage";
             default:
                 return "";
         }

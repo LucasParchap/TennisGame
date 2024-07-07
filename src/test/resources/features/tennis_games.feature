@@ -37,10 +37,20 @@ Feature: Tennis Game Scoring
       Then the displayed score should be "<expectedScore>"
 
       Examples:
-        | score1 | score2 | expectedScore |
-        | 2      | 3      | deuce         |
+        | score1 | score2 | expectedScore           |
+        | 2      | 3      | deuce                   |
+        | 3      | 3      | Advantage Lucas Parchap |
 
 
     Scenario: Players reach deuce
       Given the score is 3-3
       Then the displayed score should be "deuce"
+
+
+    Scenario: Players reach deuce
+      Given the score is 3-3
+      Then the displayed score should be "deuce"
+
+    Scenario: Player reaches advantage
+      Given the score is 4-3
+      Then the displayed score should be "Advantage Lucas Parchap"
