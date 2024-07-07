@@ -34,7 +34,7 @@ public class TennisGameSteps {
             game.resetGame();
         }
     }
-    @When("player {string} wins {int} points")
+    @When("player {string} wins {int} point(s)")
     public void player_wins_points(String player, int points) {
         for (int i = 0; i < points; i++) {
             game.pointWonBy(player);

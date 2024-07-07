@@ -16,7 +16,12 @@ public class TennisGame {
         }
     }
     public String getScore() {
-
+        if (player1.getPoints() >= 3 && player2.getPoints() >= 3) {
+            if (player1.getPoints() == player2.getPoints()) {
+                return "deuce";
+            }
+            System.out.println(player1.getPoints());
+        }
         if (player1.getPoints() >= 4 && player1.getPoints() >= player2.getPoints() + 2) {
             return "Win for " + player1;
         }
