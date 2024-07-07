@@ -16,15 +16,22 @@ public class TennisGame {
         }
     }
     public String getScore() {
+
         if (player1.getPoints() >= 3 && player2.getPoints() >= 3) {
             if (player1.getPoints() == player2.getPoints()) {
                 return "deuce";
             }
-            if (player1.getPoints() > player2.getPoints()) {
+            if (player1.getPoints() == player2.getPoints() + 1) {
                 return translateScore(player1.getScore()) + " " + player1;
             }
-            if (player2.getPoints() < player1.getPoints()) {
+            if (player2.getPoints() == player1.getPoints() + 1) {
                 return translateScore(player2.getScore()) + " " + player2;
+            }
+            if (player1.getPoints() >= player2.getPoints() + 2) {
+                return "Win for " + player1;
+            }
+            if (player2.getPoints() >= player1.getPoints() + 2) {
+                return "Win for " + player2;
             }
         }
         if (player1.getPoints() >= 4 && player1.getPoints() >= player2.getPoints() + 2) {

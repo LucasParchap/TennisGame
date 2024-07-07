@@ -40,12 +40,7 @@ Feature: Tennis Game Scoring
         | score1 | score2 | expectedScore           |
         | 2      | 3      | deuce                   |
         | 3      | 3      | Advantage Lucas Parchap |
-
-
-    Scenario: Players reach deuce
-      Given the score is 3-3
-      Then the displayed score should be "deuce"
-
+        | 4      | 3      | Win for Lucas Parchap   |
 
     Scenario: Players reach deuce
       Given the score is 3-3
