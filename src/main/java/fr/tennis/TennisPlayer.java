@@ -27,6 +27,9 @@ public class TennisPlayer {
     public void winPoint() {
         this.points++;
     }
+    public void losePoint() {
+        this.points--;
+    }
 
     public void resetScore() {
         this.points = 0;

@@ -41,6 +41,7 @@ Feature: Tennis Game Scoring
         | 2      | 3      | deuce                   |
         | 3      | 3      | Advantage Lucas Parchap |
         | 4      | 3      | Win for Lucas Parchap   |
+        | 3      | 4      | deuce                   |
 
     Scenario: Players reach deuce
       Given the score is 3-3
@@ -49,3 +50,16 @@ Feature: Tennis Game Scoring
     Scenario: Player reaches advantage
       Given the score is 4-3
       Then the displayed score should be "Advantage Lucas Parchap"
+
+    Scenario: Player loses advantage and returns to deuce
+      Given the score is 4-3
+      When player "Gaël Monfils" wins 1 point
+      Then the displayed score should be "deuce"
+
+    Scenario: Player wins from deuce
+      Given the score is 3-3
+      When player "Gaël Monfils" wins 1 point
+      Then the displayed score should be "Advantage Gaël Monfils"
+      When player "Gaël Monfils" wins 1 point
+      Then the score should be "Win for Gaël Monfils"
+

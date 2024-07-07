@@ -10,10 +10,21 @@ public class TennisGame {
     }
     public void pointWonBy(String playerName) {
         if (player1.toString().equals(playerName)) {
-            player1.winPoint();
+            if (isAdvantage(player2)) {
+                player2.losePoint();
+            } else {
+                player1.winPoint();
+            }
         } else if (player2.toString().equals(playerName)) {
-            player2.winPoint();
+            if (isAdvantage(player1)) {
+                player1.losePoint();
+            } else {
+                player2.winPoint();
+            }
         }
+    }
+    private boolean isAdvantage(TennisPlayer player) {
+        return player.getPoints() == 4 && (player1.getPoints() + player2.getPoints() == 7);
     }
     public String getScore() {
 
