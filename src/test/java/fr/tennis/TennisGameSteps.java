@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertEquals;
 
 public class TennisGameSteps {
+
     private TennisGame game;
 
     @Given("the score is {int}-{int}")
