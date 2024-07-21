@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertEquals;
 
 public class TennisGameSteps {
+
     private TennisGame game;
 
     @Given("the score is {int}-{int}")
@@ -16,7 +17,7 @@ public class TennisGameSteps {
         setPlayerScore("Gaël Monfils", score2);
     }
 
-    @Then("the displayed score should be {string}")
+    @Then("the displayed score should be {string}")  
     public void the_displayed_score_should_be(String expectedScore) {
         assertEquals(expectedScore, game.getScore());
     }
@@ -34,7 +35,7 @@ public class TennisGameSteps {
             game.resetGame();
         }
     }
-    @When("player {string} wins {int} points")
+    @When("player {string} wins {int} point(s)")
     public void player_wins_points(String player, int points) {
         for (int i = 0; i < points; i++) {
             game.pointWonBy(player);
