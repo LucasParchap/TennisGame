@@ -17,7 +17,7 @@ public class TennisGameSteps {
         setPlayerScore("Gaël Monfils", score2);
     }
 
-    @Then("the displayed score should be {string}")
+    @Then("the displayed score should be {string}")  
     public void the_displayed_score_should_be(String expectedScore) {
         assertEquals(expectedScore, game.getScore());
     }
